@@ -1,0 +1,89 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+</style>
+
+<div class="page-content" >
+  <mat-drawer-container class="container" autosize >
+    <mat-drawer #drawer1 class="sidenav2" position="end" opened="true" mode="side" scroll="no" style="overflow: hidden">
+      
+      <p>
+        <mat-form-field appearance="legacy" style=" width: 98%; color: white;">
+          <mat-label style="color: white;">Search</mat-label>
+          <input matInput style="color:white; width: 75%;" (keyup)="onFilterTextChanged($any($event.target).value)" #input> 
+          <button mat-button (click)="reloadCurrentPage()"><mat-icon matSuffix>search</mat-icon></button>
+        </mat-form-field>
+      </p>
+  
+      <mat-card class="example-card" style="width:88%; background-color: var(--ThirdColor);">
+        <h2>Suggestions for you</h2>
+        <div class="personToFollow">
+          <img class style="width: 45px; border-radius: 25px"
+            src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <button mat-button class="personToFollowButton">
+            <span>Random Person</span>
+          </button>
+        </div>
+        <div class="personToFollow">
+          <img class style="width: 45px; border-radius: 25px"
+            src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <button mat-button class="personToFollowButton">
+            <span>Random Person</span>
+          </button>
+        </div>
+        <div class="personToFollow">
+          <img class style="width: 45px; border-radius: 25px"
+            src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="">
+          <button mat-button class="personToFollowButton">
+            <span>Random Person</span>
+          </button>
+        </div>
+      </mat-card>
+      <div class="terms" style="margin-top: 10%;" >
+        <span>Terms and Conditions</span><br><br>
+        <span><mat-icon style="font-size: 15px;">copyright</mat-icon>MySocialNetwork 2022</span>
+      </div>
+    </mat-drawer>
+
+    
+    <div class="sidenav-content" >
+      <p>
+        <mat-toolbar  style="background-color: var(--ThirdColor)">
+          <span>{{appTitle}}</span>
+        </mat-toolbar>
+      </p>
+        <router-outlet></router-outlet>
+    </div>
+    <mat-drawer #drawer2 class="sidenav1" opened="true" mode="side">
+      <h1>MySocialNetwork <fa-icon [icon]="faUsers"></fa-icon>
+      </h1>
+      <br>
+      <div class="menu">
+        <button mat-button class="menu-item" routerLink='home'>
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-button class="menu-item" routerLink='notifications'>
+          <mat-icon>notifications</mat-icon>
+          <span>Notifications</span>
+        </button>
+        <button mat-button class="menu-item" routerLink='profile'>
+          <mat-icon>person_pin</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-button class="menu-item">
+          <mat-icon>toc</mat-icon>
+          <span>More Options...</span>
+        </button>
+        <br>
+        <button mat-button class="menu-item">
+          <div class="post">
+            <span>POST!</span>
+          </div>
+        </button>
+        <div class="profile" style="margin-top: 220%; margin-left: 30%; display: block;">
+          <app-mini-profile></app-mini-profile>
+        </div>
+      </div>
+    </mat-drawer>
+  </mat-drawer-container>
+</div>

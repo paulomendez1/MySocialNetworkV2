@@ -1,0 +1,15 @@
+<form novalidate (ngSubmit)="submitPost()" [name]="postForm" [formGroup]="postForm">
+    <mat-card class="container"
+        style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);">
+        <div class="post">
+            <img class="img" style="width: 45px; height:67px; border-radius: 0px"
+                src="{{authService.user?.profile.picture}}" alt="">
+            <mat-form-field appearance="fill">
+                <mat-label>What's going on?</mat-label>
+                <textarea matInput formControlName="description" style="width: 100%;"></textarea>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit" [disabled]="!postForm.valid"
+            style="background-color: var(--MainColor); color:white; width: 20%;">Post</button>
+    </mat-card>
+</form>

@@ -1,0 +1,103 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"><img src="{{authService.user?.profile.picture}}" alt="" style="width: 45px; height:67px; border-radius: 0px"></div>
+      <mat-card-title>{{authService.user?.profile.name}}</mat-card-title>
+      <mat-card-subtitle>{{authService.user?.profile.preferred_username}}</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-tab-group>
+            <mat-tab label="Posts"> 
+              <mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);" *ngFor="let post of posts">
+                <div class="post">
+                  <img *ngIf="post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px" 
+                  src={{post.UserImage}} alt="">
+                  <img *ngIf="!post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+                   src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+                  <div class="post2">
+                    <div class="user">
+                      <h2>{{post.User}}</h2>
+                      <h3>¦</h3>
+                      <h4>{{post.Date | date:'short'}}</h4>
+                    </div>
+                    <img *ngIf="post.Image" src="{{post.Image}}" alt="">
+                    <p>{{post.Description}}</p>
+                  </div>
+                </div>
+                <div class="actions" style="margin-left: 4%;">
+                  <button mat-icon-button color="primary" [routerLink]="['/home/post', post.Id]"  >
+                    <span>
+                      <mat-icon>comment</mat-icon> {{post.Comments}}
+                    </span>
+                  </button>
+                  <button mat-icon-button color="primary" >
+                    <span>
+                      <mat-icon>favorite</mat-icon> 2
+                    </span>
+                  </button>
+                </div>
+              </mat-card>
+              
+            </mat-tab>
+            <mat-tab label="Liked Posts"> 
+              <mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);" *ngFor="let post of likes">
+                <div class="post">
+                  <img *ngIf="post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px" 
+                  src={{post.UserImage}} alt="">
+                  <img *ngIf="!post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+                   src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+                  <div class="post2">
+                    <div class="user">
+                      <h2>{{post.User}}</h2>
+                      <h3>¦</h3>
+                      <h4>{{post.Date | date:'short'}}</h4>
+                    </div>
+                    <img *ngIf="post.Image" src="{{post.Image}}" alt="">
+                    <p>{{post.Description}}</p>
+                  </div>
+                </div>
+                <div class="actions" style="margin-left: 4%;">
+                  <button mat-icon-button color="primary" [routerLink]="['/home/post', post.Id]"  >
+                    <span>
+                      <mat-icon>comment</mat-icon> {{post.Comments}}
+                    </span>
+                  </button>
+                  <button mat-icon-button color="primary" >
+                    <span>
+                      <mat-icon>favorite</mat-icon> 2
+                    </span>
+                  </button>
+                </div>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="Comments"> 
+              <mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);" *ngFor="let comment of comments">
+                <div class="post">
+                  <img *ngIf="comment.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px" 
+                  src={{comment.UserImage}} alt="">
+                  <img *ngIf="!comment.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+                   src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+                  <div class="post2">
+                    <div class="user">
+                      <h2>{{comment.user}}</h2>
+                      <h3>¦</h3>
+                      <h4>{{comment.date | date:'short'}}</h4>
+                    </div>
+                    <a [routerLink]="['/home/post', comment.idPost]">Link To Post...</a>
+                    <p>{{comment.description}}</p>
+                  </div>
+                </div>
+                <div class="actions" style="margin-left: 4%;">
+                  <button mat-icon-button color="primary" >
+                    <span>
+                      <mat-icon>favorite</mat-icon> 2
+                    </span>
+                  </button>
+                </div>
+              </mat-card>
+            </mat-tab>
+          </mat-tab-group>
+    </mat-card-actions>
+  </mat-card>

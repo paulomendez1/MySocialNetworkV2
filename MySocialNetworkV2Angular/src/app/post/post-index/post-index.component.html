@@ -1,0 +1,36 @@
+<mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);"
+  *ngFor="let post of posts">
+  <div class="post">
+    <img *ngIf="post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px" src={{post.UserImage}}
+      alt="">
+    <img *ngIf="!post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+      src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+    <div class="post2">
+      <div class="user">
+        <h2>{{post.User}}</h2>
+        <h3>¦</h3>
+        <h4>{{post.Date | date:'short'}}</h4>
+      </div>
+      <img *ngIf="post.Image" src="{{post.Image}}" alt="">
+      <p>{{post.Description}}</p>
+    </div>
+  </div>
+  <div class="actions" style="margin-left: 4%;">
+    <button mat-icon-button color="primary" [routerLink]="['/home/post', post.Id]">
+      <span>
+        <mat-icon>comment</mat-icon> {{post.Comments}}
+      </span>
+    </button>
+    <button mat-icon-button color="primary" (click)="onLiking(post.Id)">
+      <span>
+        <mat-icon>favorite</mat-icon> {{post.Likes}}
+      </span>
+    </button>
+  </div>
+</mat-card>
+
+<mat-paginator [length]="totalAmountOfRecords"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[5, 10, 25]"
+              aria-label="Select page" (page)="updatePagination($event)">
+</mat-paginator>

@@ -1,0 +1,10 @@
+mat-card{
+    box-shadow: 30px 15px 10px -20px rgb(0, 0, 0);
+}
+.post{
+    display: flex;
+}
+mat-form-field {
+    width: 100%;
+    background-color: var(--ThirdColor);
+}

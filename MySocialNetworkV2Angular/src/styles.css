@@ -1,0 +1,10 @@
+:root{
+    --MainColor: rgb(0, 0, 0);
+    --SecondaryColor: rgb(192, 5, 5);
+    --ThirdColor: rgb(255, 255, 255);
+    --FourthColor: rgb(227,226,222);
+}
+
+
+html, body { height: 100%;   -ms-overflow-style: none; }
+body { margin: 0; font-family: 'Lato', sans-serif;  -ms-overflow-style: none;}

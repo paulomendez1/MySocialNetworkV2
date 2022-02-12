@@ -1,0 +1,61 @@
+<mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);">
+  <div class="post">
+    <img *ngIf="post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px" src={{post.UserImage}}
+      alt="">
+    <img *ngIf="!post.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+      src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+    <div class="post2">
+      <div class="user">
+        <h2>{{post.User}}</h2>
+        <h4>{{post.Date | date:'short'}}</h4>
+      </div>
+      <h1>{{post.Description}}</h1>
+    </div>
+  </div>
+  <div class="actions" style="margin-left: 4%;">
+    <button mat-icon-button color="primary">
+      <span>
+        <mat-icon>comment</mat-icon> 1
+      </span>
+    </button>
+    <button mat-icon-button color="primary">
+      <span>
+        <mat-icon>favorite</mat-icon> 2
+      </span>
+    </button>
+  </div>
+</mat-card>
+
+
+<form novalidate (ngSubmit)="submitComment()" [name]="commentForm" [formGroup]="commentForm">
+  <div class="post">
+    <img class="img" style="width: 45px; height:67px; border-radius: 0px" src="{{authService.user?.profile.picture}}"
+      alt="">
+    <mat-form-field appearance="fill">
+      <mat-label>Post your reply</mat-label>
+      <textarea matInput formControlName="description" style="width: 100%;"></textarea>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!commentForm.valid"
+    style="background-color: var(--MainColor); color:white; width: 20%; margin-right: 7%; height:67px;">Post</button>
+  </div>
+</form>
+
+<div *ngIf="!comments">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-card class="container" style="border-bottom: 1px solid rgba(0, 0, 0, 0.11); background-color: var(--ThirdColor);"
+  *ngFor="let comment of comments">
+  <div class="post">
+    <img *ngIf="comment.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+      src={{comment.UserImage}} alt="">
+    <img *ngIf="!comment.UserImage" class="img" style="width: 45px; height:67px; border-radius: 0px"
+      src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="">
+    <div class="post2">
+      <div class="user">
+        <h2>{{comment.user}}</h2>
+        <h4>{{comment.date | date:'short'}}</h4>
+      </div>
+      <p>{{comment.description}}</p>
+    </div>
+  </div>
+</mat-card>

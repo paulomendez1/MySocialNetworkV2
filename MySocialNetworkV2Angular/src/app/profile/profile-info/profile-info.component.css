@@ -1,0 +1,23 @@
+example-card {
+    max-width: 400px;
+  }
+  
+  .post{
+    display: flex;
+}
+p {
+    width: 90%;
+    background-color: var(--ThirdColor);
+}
+
+mat-icon{
+    color: var(--MainColor);
+}
+
+.user{
+    display: flex;
+    flex: auto;
+    width: 100%;
+   align-items:baseline;
+}
+

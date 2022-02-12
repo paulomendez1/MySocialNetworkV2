@@ -1,0 +1,81 @@
+.page-content{
+  width: 100%;
+  height: 100%;
+}
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+  background-color: white !important;
+}
+
+p{
+  display: inline;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: var(--MainColor);
+    
+  }
+
+  .contain::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title{
+    color:black;
+  }
+  
+  .sidenav-content {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    background-color: var(--ThirdColor);
+    margin-left: 14%;
+    overflow-x: hidden;
+  }
+  
+  
+  .sidenav1 {
+    background-color: var(--MainColor);
+    color: var(--FourthColor);
+    padding: 20px;
+    display:block;
+    margin-left: 10%;
+    
+  }
+  .sidenav2 {
+    background-color: var(--MainColor);
+    color: var(--FourthColor);
+    padding: 10px;
+    display:block;
+    margin-right: 10%;
+    scroll-behavior: unset;
+    .example-card{
+      border-radius: 20px;
+      .personToFollow{
+        width: 100%;
+    display:block;
+    font-size: 20px;
+    align-items: center;
+        margin-top: 30px;
+        .personToFollowButton{
+          font-size: 110%;
+        }
+      }
+    }
+  }
+  
+
+  .menu-item{
+    width: 100%;
+    display:block;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .menu .post {
+    background-color: var(--ThirdColor);
+    color:black;
+    border-radius: 25px;
+  }

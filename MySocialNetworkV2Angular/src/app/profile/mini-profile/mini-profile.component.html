@@ -1,0 +1,9 @@
+<img class style="width: 45px; border-radius: 25px"
+            src="{{authService.user?.profile.picture}}" alt="">
+          <button mat-button class="personToFollowButton" [matMenuTriggerFor]="menu">
+            <span style="font-size: 100%;">{{authService.user?.profile.name}}</span>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/profile">My Profile</button>
+            <button mat-menu-item (click)="authService.logout()">Logout</button>
+          </mat-menu>
