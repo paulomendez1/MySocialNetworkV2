@@ -18,7 +18,8 @@ Preview:
 Frontend screens:
 
 Home:
+![SocialNetwork1](https://user-images.githubusercontent.com/85239081/153727868-ef12dc7d-04b4-4147-8e7f-4334b376d533.JPG)
 
 
 Profile:
-
+![SocialNetwork2](https://user-images.githubusercontent.com/85239081/153727869-dbfb65a6-9f27-4cfd-b06a-efdabf8d2603.JPG)
