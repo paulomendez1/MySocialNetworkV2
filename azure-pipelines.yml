@@ -15,6 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+-script: pwd
+ displayName: 'what directory are we in?'
+ 
+ -script: ls -la
+  displayName: 'what files are in this folder?'
+  
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
